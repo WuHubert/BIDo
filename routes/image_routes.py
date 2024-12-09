@@ -22,7 +22,8 @@ class ImageGenerator:
         response = requests.post(
             self.api_url, 
             headers=self.headers, 
-            json={"inputs": prompt}
+            json={"inputs": prompt},
+            timeout=300,
         )
         return response.content
 
